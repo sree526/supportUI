@@ -1,0 +1,63 @@
+<div class="loginContainer h-100 bams-comp-login">
+    <div class="row h-auto h-sm-auto h-md-25 h-lg-25">
+        <div class="container">
+            <div class="row justify-content-center justify-content-md-center justify-content-lg-start h-100 d-flex py-3"> <img src="assets/images/bams_logo.svg" class="img-fluid bams-logo my-auto h-sm-75" alt="BAMS Logo" /> </div>
+        </div>
+    </div>
+    <div class="row bg-primary h-auto h-sm-auto h-md-50 h-lg-50">
+        <div class="container">
+            <div class="row h-100">
+                <div class="col d-none d-sm-none d-md-none d-lg-block bg-primary bams-login-left-panel">
+                    <div class="d-flex align-items-end flex-column h-100"> <img _ngcontent-c1="" alt="Clover" src="assets/images/clover.png" class="img img-fluid w-75 mt-auto pl-5 ml-0" style="margin-bottom: -4rem!important; margin-right:-4rem!important;"> </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 my-auto h-100 d-flex">
+                    <div class="login my-auto w-100">
+                        <div class="pl-5 mb-5 mt-5 mt-sm-3 mt-md-3 mt-lg-3">
+                            <h1 class="d-flex justify-content-center justify-content-md-center justify-content-lg-start">Merchant Services</h1>
+                            <h4 class="d-flex justify-content-center justify-content-md-center justify-content-lg-start">Application &amp; Product Selection Tool</h4> </div>
+                        <div class="pl-5 mt-5 mt-sm-3 mt-md-3 mt-lg-3">
+                            <div class="col pl-0">
+                                <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)" novalidate>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" for="NBKID">Phone Number</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" #phoneNumberRef="ngModel" class="form-control rounded-0" [textMask]="{mask: mask}" name="phoneNumber" [(ngModel)]="phoneNumber" required ngModel>
+                                            <!-- <div *ngIf="nbkIdRef.valid || nbkIdRef.pristine " class="alert alert-danger">
+                                         NBKID is a required field
+                                    </div> -->
+                                            <div *ngIf="shownphonenumber" class="invalid-feedback"> NBKID is a required field </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" for="password">Password</label>
+                                        <div class="col-sm-9">
+                                            <input type="password" id="password" #passwordRef="ngModel" appShowhide [(ngModel)]="password" class="form-control rounded-0" name="password" required />
+                                            <div *ngIf="showpasswordempty" class="invalid-feedback"> Password is a required field </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9">
+                                            <div class="row no-gutters d-flex">
+                                                <button class="btn btn-primary form-control my-2 rounded-0 col mr-2" type="submit" id="siginbutton">Sign In</button>
+                                                <button type="button" class="btn btn-secondary form-control my-2 rounded-0 col ml-3" (click)="toggleShow($event)">Show/Hide</button>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col-sm-12" *ngIf="LoginFailMessage"> <small class="text-danger">{{LoginFailure}}</small>
+                                                    <br>
+                                                    <!-- <p class="text-danger">{{LoginFailureContactMessage}} Network Administrator  </p> --><small class="form-text"><a href="{{LoginFailureContactAdmin}}" target="_blank">Click here to contact Network Administrator</a></small> </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row h-auto h-sm-auto h-md-25 h-lg-25"></div>
+    <div class="bams-loader" *ngIf="loadingSpinnerImage"></div>
+</div>
