@@ -1,0 +1,17 @@
+
+<app-header2></app-header2>
+<div class="container pt-5 mb-5 bams-comp-applications">
+  <fieldset class="scheduler-border ">
+    <legend class="scheduler-border">Add NBKID </legend>
+    <br>
+    <form #addNbkidForm="ngForm" (ngSubmit)="addNbkId(addNbkidForm.value)" novalidate>
+            <div class="form-group row">
+                <input type="text" placeholder=" NBKID" class="form-control col-md-5"  name="nbkId" ngModel
+                    [(ngModel)]="nbkId" required>
+            </div>
+            <div class="form-group row">
+                    <button class="btn btn-primary" type="submit" [disabled]="!addNbkidForm.valid" id="submitbutton">Submit</button>
+            </div>
+        </form>
+      </fieldset>
+</div>

@@ -12,5 +12,8 @@ export class ApplicationsComponent implements OnInit {
   ngOnInit() {
    
   }
+clicked(){
+     this.router.navigate(['/nbkid']);
+  }
 
 }

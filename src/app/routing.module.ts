@@ -2,6 +2,7 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SupportLoginComponent } from './support-login/support-login.component';
 import { ApplicationsComponent } from './applications/applications.component';
+import { NbkidComponent } from './nbkid/nbkid.component';
 
 const appRoutes: Routes = [
  {
@@ -16,6 +17,11 @@ const appRoutes: Routes = [
         {
             path:'applications',
             component:ApplicationsComponent
+          },
+          {
+            path:'nbkid',
+            component:NbkidComponent
+
           },
 ];
     @NgModule({

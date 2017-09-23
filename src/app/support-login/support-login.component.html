@@ -14,18 +14,21 @@
                     <div class="login my-auto w-100">
                         <div class="pl-5 mb-5 mt-5 mt-sm-3 mt-md-3 mt-lg-3">
                             <h1 class="d-flex justify-content-center justify-content-md-center justify-content-lg-start">Merchant Services</h1>
-                            <h4 class="d-flex justify-content-center justify-content-md-center justify-content-lg-start">Application &amp; Product Selection Tool</h4> </div>
+                            <h4 class="d-flex justify-content-center justify-content-md-center justify-content-lg-start">Support</h4> </div>
                         <div class="pl-5 mt-5 mt-sm-3 mt-md-3 mt-lg-3">
                             <div class="col pl-0">
                                 <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)" novalidate>
                                     <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label" for="NBKID">Phone Number</label>
+                                        <label class="col-sm-3 col-form-label" for="NBKID">UserName</label>
                                         <div class="col-sm-9">
-                                            <input type="text" #phoneNumberRef="ngModel" class="form-control rounded-0" [textMask]="{mask: mask}" name="phoneNumber" [(ngModel)]="phoneNumber" required ngModel>
+                                            <!--<input type="text" #phoneNumberRef="ngModel" class="form-control rounded-0" [textMask]="{mask: mask}" name="phoneNumber" [(ngModel)]="phoneNumber" required ngModel>-->
+                                           <!-- <input type="text" #phoneNumberRef="ngModel" class="form-control rounded-0" [textMask]="{mask: mask}" name="phoneNumber" [(ngModel)]="phoneNumber" required ngModel>-->
+             <input type="email" name="emailId" class="form-control rounded-0" #emailIdRef="ngModel"  [(ngModel)]="emailId" required ngModel>
+
                                             <!-- <div *ngIf="nbkIdRef.valid || nbkIdRef.pristine " class="alert alert-danger">
                                          NBKID is a required field
                                     </div> -->
-                                            <div *ngIf="shownphonenumber" class="invalid-feedback"> NBKID is a required field </div>
+                                            <div *ngIf="showUserName" class="invalid-feedback"> Username Should be bankofamericamerchant.com</div>
                                         </div>
                                     </div>
                                     <div class="form-group row">

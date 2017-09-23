@@ -14,6 +14,8 @@ import { TextMaskModule } from 'angular2-text-mask';
 import {LoginService} from './services/loginService';
 import { ApplicationsComponent } from './applications/applications.component';
 import { Header2Component } from './header2/header2.component';
+import { NbkidComponent } from './nbkid/nbkid.component';
+import {NBKIDService} from './services/addService'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,7 @@ import { Header2Component } from './header2/header2.component';
     WarningComponent,
     ApplicationsComponent,
      Header2Component,
+     NbkidComponent,
     ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { Header2Component } from './header2/header2.component';
     ReactiveFormsModule,
      TextMaskModule
    ], 
-  providers: [LoginService],
+  providers: [LoginService,NBKIDService],
     
     bootstrap: [AppComponent]
 })

@@ -11,6 +11,7 @@ import {LoginService} from '../services/loginService';
 export class SupportLoginComponent implements OnInit {
  public mask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
  public phoneNumber = "";
+ public emailId = "";
  response: any;
   LoginFailure;
   LoginFailureContactMessage;
@@ -18,6 +19,7 @@ export class SupportLoginComponent implements OnInit {
   LoginFailMessage;
   loadingSpinnerImage;
   shownphonenumber;
+  showUserName;
   showpasswordempty;
   password;
   show = false;
@@ -41,11 +43,16 @@ export class SupportLoginComponent implements OnInit {
     }
   }
   onSubmit(loginForm) {
-    if(this.phoneNumber!=undefined && this.phoneNumber!='' && this.password!=undefined && this.password!=''){
+   // if(this.phoneNumber!=undefined && this.phoneNumber!='' && this.password!=undefined && this.password!=''){
+     if(this.emailId!=undefined && this.emailId!='' && this.password!=undefined && this.password!=''){
     console.log(loginForm);
     this.LoginFailMessage = false;
-    let data = {
+   /* let data = {
       "businessPhone": this.phoneNumber.replace(/\D+/g, ''),
+      "password": loginForm.password
+    }*/
+    let data = {
+      "emailId": this.emailId,
       "password": loginForm.password
     }
     this.loginService.login(data).subscribe(response=>{
